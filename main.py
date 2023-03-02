@@ -1,3 +1,5 @@
+# Author : Ulrich COUDIN
+
 from analyse import *
 from tkinter import *
 import sys

@@ -1,3 +1,5 @@
+# Author : Ulrich COUDIN
+
 def mediane(nombres):
     """ calcul de la médiane des valeurs d'une liste"""
     N=len(nombres)

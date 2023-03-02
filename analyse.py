@@ -1,3 +1,5 @@
+# Author : Ulrich COUDIN
+
 from estimateurs import *
 import numpy as np
 import pandas as pd
@@ -56,8 +58,8 @@ def graph(t1,t2,t3,t4,t5,N,v):
         plt.title("Graphique linéaire")
         plt.legend(["Estimateur 1","Estimateur 2","Estimateur 3","Estimateur 4","Estimateur 5"])
         plt.axhline(y=N, color='red', linestyle='-')
-        plt.xlabel("Estimateurs")
-        plt.ylabel("Estimation")
+        plt.xlabel("Estimation")
+        plt.ylabel("Taille de la population")
 
     elif v == 2: # Graphique à nuage de points
         plt.plot(df["Estimateur 1"], '.', color="green")
@@ -68,8 +70,8 @@ def graph(t1,t2,t3,t4,t5,N,v):
         plt.title("Graphique à nuage de points")
         plt.legend(["Estimateur 1","Estimateur 2","Estimateur 3","Estimateur 4","Estimateur 5"])
         plt.axhline(y=N, color='red', linestyle='-')
-        plt.xlabel("Estimateurs")
-        plt.ylabel("Estimation")
+        plt.xlabel("Estimation")
+        plt.ylabel("Taille de la population")
 
     elif v == 3: # Diagramme à dispersion
         fig, axs = plt.subplots(1, 5, figsize=(20,5))
