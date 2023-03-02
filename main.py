@@ -1,12 +1,23 @@
 from analyse import *
 from tkinter import *
-from customtkinter import *
+import sys
+import subprocess
+
+try:
+    from customtkinter import *
+except ImportError:
+    print("CustomTkinter n'est pas installé.")
+    install = input("Voulez-vous l'installer maintenant ? (O/N) ")
+    if install.lower() == "o":
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'customtkinter'])
+    else:
+        print("Installation annulée.")
 
 ### GUI : Logiciel d'échantillonage
 
 # Exécution des modules
 def execute_meilleure_estimateur():
-    """Execute la fonction meilleureEstimateur"""
+    """Execute la fonction ecart_quad"""
     # Vérification des entrées utilisateur
     if not (N_entry.get()).isdigit() or not (n_entry.get()).isdigit():
         resultat_label.configure(text="Les entrées doivent être des entiers.")
@@ -42,7 +53,7 @@ v = IntVar()
 
 radioTitle = CTkLabel(master=root, 
         text="Type de représentation graphique:",
-        padx = 20)
+        )
 
 radio1 = CTkRadioButton(master=root,  
                text="Graphique linéaire",
